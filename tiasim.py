@@ -606,7 +606,7 @@ class NonInvertingAmp():
             -3 dB bandwidth 
             Found by searching for the frequency where gain(f) = gain(0)/sqrt(2) 
         """
-        f = numpy.logspace(1,10,1e6)
+        f = numpy.logspace(1,10,int(1e6))
         g = numpy.abs( self.gain(f) )
         try:
             ind = min( min(numpy.where( g < g[0]/numpy.sqrt(2.0)) ) )
